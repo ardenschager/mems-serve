@@ -26,7 +26,7 @@ async def handle_websocket(websocket, path):
         print("disconnected")
 
 async def main():
-    port = int(os.getenv('PORT', 80))
+    port = 8080
     print("listening on: " + str(port))
     async with websockets.serve(
 		handle_websocket,
