@@ -27,6 +27,7 @@ async def handle_websocket(websocket, path):
 
 async def main():
     port = int(os.getenv('PORT', 80))
+    print("listening on: " + str(port))
     async with websockets.serve(
 		handle_websocket,
 		host="", 
