@@ -1,0 +1,8 @@
+spec:
+  name: mems-serve
+  services:
+  - environment_slug: python
+    git:
+      branch: main
+      repo_clone_url: https://github.com/natschager/mems-serve.git
+    name: mems-serve
