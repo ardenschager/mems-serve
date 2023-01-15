@@ -29,15 +29,18 @@ async def handle_websocket(websocket, path):
         print("disconnected")
 
 async def main():
-    port = 8080
-    print("listening on: " + str(port))
-    async with websockets.serve(
-		handle_websocket,
-		host="", 
-		port=port,
-        # host="0.0.0.0",
-        # port=8000
-	):
-        await asyncio.Future()
+    try: 
+        port = 8080
+        print("listening on: " + str(port))
+        async with websockets.serve(
+            handle_websocket,
+            host="", 
+            port=port,
+            # host="0.0.0.0",
+            # port=8000
+        ):
+            await asyncio.Future()
+    finally: 
+        print("server error?")
 
 asyncio.run(main())
