@@ -11,8 +11,8 @@ responses = []
 async def handle_websocket(websocket, path):
     try:
         # sync server game state to newly connected game client
-        await websocket.send(json.dumps(responses))
         print('connected to: ' + str(websocket.id))
+        await websocket.send(json.dumps(responses))
         # route and handle messages for duration of websocket connection
         async for message in websocket:
             response = {
@@ -21,8 +21,8 @@ async def handle_websocket(websocket, path):
             }
             responses.append(response)
             response = json.dumps(response)
-            print("response: " + str)
-            websocket.send(await websocket.send())
+            print("response: " + str(response))
+            websocket.send(await websocket.send(response))
     finally:
         # upon websocket disconnect remove client's player
         print("disconnected")
