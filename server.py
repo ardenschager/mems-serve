@@ -15,14 +15,15 @@ async def handle_websocket(websocket, path):
         await websocket.send(json.dumps(responses))
         # route and handle messages for duration of websocket connection
         async for message in websocket:
-            response = {
-                "input": message,
-                "scores": te.get_emotion(message)
-            }
-            responses.append(response)
-            response = json.dumps(response)
-            print("response: " + str(response))
-            websocket.send(await websocket.send(response))
+            if len(message) != 0:
+                response = {
+                    "input": message,
+                    "scores": te.get_emotion(message)
+                }
+                responses.append(response)
+                response = json.dumps(response)
+                print("response: " + str(response))
+                websocket.send(await websocket.send(response))
     finally:
         # upon websocket disconnect remove client's player
         print("disconnected")
