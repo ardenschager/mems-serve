@@ -12,7 +12,7 @@ async def handle_websocket(websocket, path):
     try:
         # sync server game state to newly connected game client
         print('connected to: ' + str(websocket.id))
-        await websocket.send(json.dumps(responses))
+        await websocket.send(json.dumps({'isInit': True, 'responses': responses}))
         # route and handle messages for duration of websocket connection
         async for message in websocket:
             if len(message) != 0:
