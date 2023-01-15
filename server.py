@@ -16,26 +16,10 @@ initial_data = [
     "I love those random memories that make me smile like an idiot",
     "I thought of the idea while on massive amounts of mushrooms, it was awesome",
     "Dogs are not better than cats, I will never believe that",
-
-    "Don sucks so yeah",
-    "What am I supposed to say here, and who is going to hear?",
-    "The wintertime is killing my garden and it's bumming me out",
-    "Woah hey, I can't believe she did that to me",
-    "My sister hates lobster rolls",
-    "Nothing lifts my spirits like a bath bomb",
-    "I love those random memories that make me smile like an idiot",
-    "I thought of the idea while on massive amounts of mushrooms, it was awesome",
-    "Dogs are not better than cats, I will never believe that",
-
-    "Don sucks so yeah",
-    "What am I supposed to say here, and who is going to hear?",
-    "The wintertime is killing my garden and it's bumming me out",
-    "Woah hey, I can't believe she did that to me",
-    "My sister hates lobster rolls",
-    "Nothing lifts my spirits like a bath bomb",
-    "I love those random memories that make me smile like an idiot",
-    "I thought of the idea while on massive amounts of mushrooms, it was awesome",
-    "Dogs are not better than cats, I will never believe that",
+    "Better chemistry through living.",
+    "Better living through chemistry.",
+    "I haven't slept in days",
+    "God really isn't sure!",
 ]
 
 responses = []
