@@ -6,13 +6,31 @@ import websockets
 import random
 import text2emotion as te
 
+initial_data = [
+    "Don sucks",
+    "What am I supposed to say here, and who is going to hear?",
+    "The wintertime is killing my garden and it's bumming me out",
+    "Woah hey, I can't believe she did that to me",
+    "My sister hates lobster rolls",
+    "Nothing lifts my spirits like a bath bomb",
+]
+
 responses = []
+
+for datum in initial_data:
+    response = {
+        "message": datum,
+        "scores": te.get_emotion(datum)
+    }
+    responses.append(response)
+
 
 async def handle_websocket(websocket, path):
     try:
         # sync server game state to newly connected game client
         print('connected to: ' + str(websocket.id))
-        await websocket.send(json.dumps({'isInit': True, 'memories': random.shuffle(responses)}))
+        random.shuffle(responses)
+        await websocket.send(json.dumps({'isInit': True, 'memories': responses}))
         # route and handle messages for duration of websocket connection
         async for message in websocket:
             if len(message) != 0:
